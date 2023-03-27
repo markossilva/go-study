@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	. "github.com/markossilva/go-study/abstract-factory"
+	"github.com/markossilva/go-study/abstract-factory"
 	"github.com/markossilva/go-study/builder"
 )
 
 func main() {
 
 	// Abstract Factory
-	adidasFactory, _ := AdidasType.GetFactory()
+	adidasFactory, _ := abstractfactory.AdidasType.GetFactory()
 	adidasShoes := adidasFactory.MakeShoes()
 	printDetailsShoes(adidasShoes)
 
@@ -40,7 +40,7 @@ func printBuilderDetails(house builder.House) {
 	fmt.Println()
 }
 
-func printDetailsShoes(s IShoe) {
+func printDetailsShoes(s abstractfactory.IShoe) {
 	fmt.Printf("Logo: %s", s.GetLogo())
 	fmt.Println()
 	fmt.Printf("Size: %d", s.GetSize())
